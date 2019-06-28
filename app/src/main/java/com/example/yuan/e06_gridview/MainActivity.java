@@ -15,6 +15,7 @@ import com.example.yuan.e05_listview.R;
 
 public class MainActivity extends AppCompatActivity {
     //声明引用
+//    private WebView mWVmhtml;
     private WebView mWVmhtml;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +30,12 @@ public class MainActivity extends AppCompatActivity {
         //设置JavaScrip
         mWVmhtml.getSettings().setJavaScriptEnabled(true);
         //访问百度首页
-        mWVmhtml.loadUrl("https://m.jd.com");
+        mWVmhtml.loadUrl("http://39.100.108.229:8080/mayikeji/index.html");
 //        mWVmhtml.loadUrl("https://www.spreadasia.cn/test/");
+
         //设置在当前WebView继续加载网页
-//        mWVmhtml.setWebViewClient(new WebViewActivity.MyWebViewClient());
-//        mWVmhtml.setWebChromeClient(new WebViewActivity.MyWebChromeClient());
+        mWVmhtml.setWebViewClient(new MainActivity.MyWebViewClient());
+        mWVmhtml.setWebChromeClient(new MainActivity.MyWebChromeClient());
 
     }
     class MyWebViewClient extends WebViewClient {
